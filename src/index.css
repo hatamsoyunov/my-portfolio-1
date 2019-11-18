@@ -1,13 +1,100 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	margin: 0;
+	font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+		"Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+		sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+#root {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+}
+
+.project-item {
+	position: relative;
+	max-width: 400px;
+	margin-bottom: 30px;
+	border-radius: 4px;
+	transition: all 0.5s ease;
+}
+.project-item:hover {
+	-webkit-transform: translateY(-2px);
+					transform: translateY(-2px);
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+.project-item:hover .project-item__info {
+	opacity: 1;
+	-webkit-transform: translate(-50%, -50%) scale(1);
+					transform: translate(-50%, -50%) scale(1);
+	visibility: visible;
+}
+.project-item:hover .project-item__name, .project-item:hover .project-item__desc, .project-item:hover .project-item__more {
+	opacity: 1;
+	-webkit-transform: translateY(0);
+					transform: translateY(0);
+}
+.project-item:hover .project-item__name {
+	transition-delay: 0.2s;
+}
+.project-item:hover .project-item__desc {
+	transition-delay: 0.25s;
+}
+.project-item:hover .project-item__more {
+	transition-delay: 0.3s;
+}
+.project-item__img-wrap {
+	border-radius: 4px;
+	overflow: hidden;
+}
+.project-item__img-wrap img {
+	max-width: 100%;
+}
+.project-item__info {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 90%;
+	height: 90%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	border-radius: 4px;
+	-webkit-transform: translate(-50%, -50%) scale(1.2);
+					transform: translate(-50%, -50%) scale(1.2);
+	background: rgba(255, 255, 255, 0.9);
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.4s ease;
+}
+.project-item__name {
+	font-size: 18px;
+	line-height: 26px;
+	font-weight: 600;
+	margin-bottom: 10px;
+}
+.project-item__desc {
+	max-width: 300px;
+	font-size: 14px;
+	font-weight: 500;
+	color: #555;
+	text-align: center;
+	margin: 0 auto 20px;
+}
+.project-item__more:hover {
+	cursor: pointer;
+}
+.project-item__btn {
+	font-size: 14px;
+}
+.project-item__name, .project-item__desc, .project-item__more {
+	opacity: 0;
+	-webkit-transform: translateY(30px);
+					transform: translateY(30px);
+	transition: all 0.4s ease;
 }
