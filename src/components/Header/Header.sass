@@ -1,0 +1,167 @@
+@import ../../sass/variables.sass
+@import ../../sass/mixins.sass
+
+// fix header
+.header
+	position: fixed
+	top: 40px
+	left: calc(80px + 32px)
+	width: calc(100% - 112px)
+	height: 0
+	display: flex
+	justify-content: space-between
+	z-index: 10
+	.logo_wrap
+		width: 160px
+		transition: all .3s ease
+		img
+			width: 100%
+			height: auto
+		&:hover
+			cursor: pointer
+		&.hidden
+			transform: translateY(-60px)
+			opacity: 0
+	.contacts_wrap
+		margin-right: 40px
+		min-height: 44px
+		display: flex
+		justify-content: center
+		align-items: center
+		.phone
+			position: relative
+			display: block
+			font-family: $fut-m
+			font-size: 22px
+			color: #333
+			line-height: 1
+			padding-right: 60px
+			padding-left: 30px
+			&:hover
+				color: $accent
+				svg
+					transform: translateX(-2px)
+			svg
+				position: absolute
+				top: 2px
+				left: 0
+				margin-right: 10px
+				font-size: 17px
+				color: #333 !important
+				transition: all .3s ease
+			&:before,
+			&:after
+				content: ''
+				position: absolute
+				top: 1px
+				right: 30px
+				width: 3px
+				height: 11px
+				background: #999
+				transition: all .7s ease .2s
+			&:after
+				top: 11px
+				background: #333
+
+		.order_button
+			padding: 8px 20px 9px
+			margin-top: -2px
+
+	.menu_button_wrap
+		display: none
+		margin: 5px
+		.menu_button
+			position: relative
+			width: 35px
+			height: 27px
+			.line
+				position: absolute
+				top: 0
+				left: 0
+				width: 100%
+				height: 2px
+				background: #000
+				transition: all .3s cubic-bezier(0.68, -0.55, 0.27, 1.55)
+			.line
+				&:before,
+				&:after
+					content: ''
+					position: absolute
+					top: 0
+					left: 0
+					width: 100%
+					height: 2px
+					background: #000
+					transition: all .3s cubic-bezier(0.68, -0.55, 0.27, 1.55)
+					// opacity: 0
+			.line
+				// transform: translateX(-70px)
+				&:before
+					top: 10px
+					// transform: translateX(70px)
+				&:after
+					top: 20px
+					// transform: translateX(140px)
+
+			// &.animated
+			// 	.line
+			// 		transform: translateY(0)
+			// 		opacity: 1
+			// 		&:before
+			// 			transform: translateY(0)
+			// 			opacity: 1
+			// 		&:after
+			// 			transform: translateY(0)
+			// 			opacity: 1
+
+			// OPENED
+			&.opened
+				.line
+					top: 12px
+					width: 100%
+					transform: translateY(0) rotate(-45deg)
+					&:before
+						width: 40%
+						transform: translateY(1px) translateX(10px) rotate(90deg)
+					&:after
+						width: 40%
+						transform: translateY(-31px) translateX(11px) rotate(90deg)
+
++xxl
+	// fix header
+	.header
+		top: 30px
+		left: calc(65px + 32px)
+		width: calc(100% - 100px)
+		.logo_wrap
+			width: 140px
+		.contacts_wrap
+			margin-right: 20px
+			.phone
+				font-size: 20px
+				svg
+					font-size: 16px
+
++md
+	.header
+		top: 20px
+		left: 0
+		width: 100%
+		padding: 0 20px
+		z-index: 102
+
+		.logo_wrap
+			width: 140px
+		.contacts_wrap
+			display: none
+
+		.menu_button_wrap
+			display: block
+
+.page-header
+	top: 0
+	left: 80px
+	width: calc(100% - 80px)
+	padding: 39px 0 39px 32px
+	height: auto
+	background: rgba(#fff, .9)

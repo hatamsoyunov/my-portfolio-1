@@ -1,0 +1,128 @@
+@import ../../sass/variables.sass
+@import ../../sass/mixins.sass
+
+.fp-section
+	+md
+		height: auto !important
+		padding: 60px 0 !important
+
+// dots nav
+#fp-nav
+	margin-right: 15px
+	ul
+		li
+			margin: 20px 0
+			text-align: center
+			a
+				&:hover
+					& + .fp-tooltip
+						color: #333
+						transform: translateX(-7px) scale(.85)
+					span
+						background: #333
+					&:before
+						background: #333
+						width: 21px
+
+				span
+					width: 8px !important
+					height: 8px !important
+					margin: -4px 0 0 -4px !important
+					background: #999
+					transition: all .3s ease
+				&:before
+					content: ''
+					position: absolute
+					top: 5px
+					right: 18px
+					width: 13px
+					height: 2px
+					background: #999
+					will-change: transform
+					transition: all .5s ease !important
+
+				&.active
+					span
+						width: 14px !important
+						height: 14px !important
+						margin: -8px 0 0 -8px !important
+						background: #333
+						box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4)
+					&:before
+						background: #333
+						width: 25px
+
+				&.active+.fp-tooltip
+					color: #333
+					transform: translateX(-11px) scale(1)
+
+			.fp-tooltip
+				display: block
+				font-family: $fut-m
+				font-size: 22px
+				line-height: .8
+				color: #999
+				padding-right: 20px
+				opacity: 1
+				width: auto
+				right: 17px !important
+				transition: all .5s ease !important
+				transform: scale(.85) translateX(0px)
+				cursor: default !important
+
++xxl
+	// dots nav
+	#fp-nav
+		margin-right: 7px
+		ul
+			li
+				margin: 15px 0
+				&:hover
+					.fp-tooltip
+						transform: translateX(-3px) scale(.85)
+					a
+						&:before
+							width: 12px
+				a
+					&:before
+						right: 18px
+						width: 10px
+
+					&.active
+						span
+							width: 12px !important
+							height: 12px !important
+							margin: -6px 0 0 -6px !important
+							background: #333
+							box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4)
+						&:before
+							background: #333
+							width: 15px
+
+					&.active+.fp-tooltip
+						color: #333
+						transform: translateX(-6px) scale(1)
+
+				.fp-tooltip
+					font-size: 20px
+					padding-right: 15px
+
++lg
+	// dots nav
+	#fp-nav
+		ul
+			li
+				a
+					&:before
+						display: none
+					&.active+.fp-tooltip
+						color: #333
+						transform: translateX(-6px) scale(1)
+				.fp-tooltip
+					display: none
+					font-size: 20px
+					padding-right: 15px
+
++sm
+	#fp-nav
+		display: none

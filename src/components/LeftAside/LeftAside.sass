@@ -1,0 +1,269 @@
+@import ../../sass/variables.sass
+@import ../../sass/mixins.sass
+
+// left_panel
+#left_panel
+	position: fixed
+	top: 0
+	left: 0
+	max-width: 80px
+	height: 100vh
+	border-right: 1px solid #e8e8e8
+	background: #fff
+	box-shadow: 0 2px 20px rgba(0,0,0,.1)
+	display: flex
+	flex-direction: column
+	align-items: center
+	justify-content: space-between
+	transition: all .3s ease
+	z-index: 102
+	&.menu_opened
+		box-shadow: none
+
+
+	.menu_button_wrap
+		margin-top: 50px
+		.menu_button
+			position: relative
+			width: 35px
+			height: 27px
+			.line
+				position: absolute
+				top: 0
+				left: 0
+				width: 100%
+				height: 2px
+				background: #000
+				transition: all .3s cubic-bezier(0.68, -0.55, 0.27, 1.55)
+			.line
+				&:before,
+				&:after
+					content: ''
+					position: absolute
+					top: 0
+					left: 0
+					width: 100%
+					height: 2px
+					background: #000
+					transition: all .3s cubic-bezier(0.68, -0.55, 0.27, 1.55)
+					// opacity: 0
+			.line
+				// transform: translateX(-70px)
+				&:before
+					top: 10px
+					// transform: translateX(70px)
+				&:after
+					top: 20px
+					// transform: translateX(140px)
+
+			// &.animated
+			// 	.line
+			// 		transform: translateY(0)
+			// 		opacity: 1
+			// 		&:before
+			// 			transform: translateY(0)
+			// 			opacity: 1
+			// 		&:after
+			// 			transform: translateY(0)
+			// 			opacity: 1
+
+			// OPENED
+			&.active
+				.line
+					top: 12px
+					width: 100%
+					transform: translateY(0) rotate(-45deg)
+					&:before
+						width: 40%
+						transform: translateY(1px) translateX(10px) rotate(90deg)
+					&:after
+						width: 40%
+						transform: translateY(-31px) translateX(11px) rotate(90deg)
+
+
+	.copyright
+		&_text
+			position: relative
+			min-width: 310px
+			color: #777
+			font-size: 15px
+			will-change: transform
+			padding-left: 70px
+			transform: rotate(-90deg)
+			&:before,
+			&:after
+				content: ''
+				position: absolute
+				top: 7.5px
+				left: 0
+				width: 25px
+				height: 3px
+				background: #999
+			&:after
+				left: 25px
+				background: #333
+
+
+	.totop
+		display: block
+		color: #333
+		width: 39px
+		min-height: 82px
+		margin-bottom: 50px
+		transform: translateX(-40px)
+		opacity: 0
+		visibility: hidden !important
+		transition: all .7s ease
+		&.active
+			transform: translateX(0)
+			opacity: 1
+			visibility: visible !important
+		&:hover
+			cursor: pointer
+			.icon
+				&:before
+					transform: translateY(-3px)
+				&:after
+					transform: translateY(-5px)
+					background: url(../../img/icons/circle_accent.svg) no-repeat center center
+		.icon
+			position: relative
+			&:before,
+			&:after
+				content: ''
+				position: absolute
+				top: 0
+				left: 12px
+				width: 15px
+				height: 40px
+				background: url(../../img/icons/arrow.svg) no-repeat center center
+				transition: all .3s ease
+			&:after
+				top: 45px
+				width: 15px
+				height: 15px
+				background: url(../../img/icons/circle.svg) no-repeat center center
+				transition: all .3s ease .1s
+		.text
+			margin-top: 65px
+			font-size: 16px
+
+
+
++xxl
+	// left_panel
+	#left_panel
+		max-width: 65px
+		.menu_button_wrap
+			margin-top: 40px
+
+		.copyright
+			&_text
+				min-width: 255px
+				font-size: 13px
+				padding-left: 45px
+				&:before,
+				&:after
+					top: 6px
+					width: 15px
+					height: 3px
+				&:after
+					left: 15px
+
+		.totop
+			width: 37px
+			min-height: 75px
+			margin-bottom: 30px
+			&:hover
+				.icon
+					&:before
+						transform: translateY(-3px)
+					&:after
+						transform: translateY(-4px)
+			.icon
+				&:before,
+				&:after
+					left: 12px
+					width: 12px
+					height: 37px
+				&:after
+					top: 38px
+					width: 12px
+					height: 12px
+			.text
+				margin-top: 57px
+				font-size: 15px
+
+
++md
+	#left_panel
+		margin-left: -100%
+		.menu_button_wrap
+			margin-top: 40px
+
+		.copyright
+			&_text
+				min-width: 225px
+				font-size: 13px
+				padding-left: 45px
+				&:before,
+				&:after
+					top: 6px
+					width: 15px
+					height: 3px
+				&:after
+					left: 15px
+
+		.totop
+			width: 37px
+			min-height: 75px
+			margin-bottom: 30px
+			&:hover
+				.icon
+					&:before
+						transform: translateY(-3px)
+					&:after
+						transform: translateY(-4px)
+			.icon
+				&:before,
+				&:after
+					left: 12px
+					width: 12px
+					height: 37px
+				&:after
+					top: 38px
+					width: 12px
+					height: 12px
+			.text
+				margin-top: 57px
+				font-size: 15px
+
+
+
+
++min_xl
+	#left_panel,
+	.header
+		.menu_button_wrap
+			.menu_button
+				// menu button hover
+				&:hover
+					cursor: pointer
+				&:hover:not(.opened)
+					.line
+						transform: translateY(-2px)
+						&:before
+							transform: translateY(2px)
+						&:after
+							transform: translateY(4px)
+
+				// OPENED
+				&.active
+					// menu button hover
+					&:hover
+						.line
+							transform: translateY(0) rotate(-45deg)
+							&:before
+								transform: translateY(3px) translateX(10px) rotate(90deg)
+							&:after
+								transform: translateY(-33px) translateX(11px) rotate(90deg)

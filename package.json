@@ -3,20 +3,35 @@
 	"version": "0.1.0",
 	"private": true,
 	"dependencies": {
-		"bootstrap": "^4.3.1",
+		"@fancyapps/fancybox": "^3.5.7",
+		"@fortawesome/fontawesome-svg-core": "^1.2.26",
+		"@fortawesome/free-brands-svg-icons": "^5.12.0",
+		"@fortawesome/free-solid-svg-icons": "^5.12.0",
+		"@fortawesome/react-fontawesome": "^0.1.8",
+		"@fullpage/react-fullpage": "^0.1.16",
+		"bootstrap": "^4.4.1",
 		"eslint-config-airbnb": "^18.0.1",
 		"eslint-config-prettier": "^6.5.0",
 		"eslint-plugin-import": "^2.18.2",
 		"eslint-plugin-jsx-a11y": "^6.2.3",
 		"eslint-plugin-prettier": "^3.1.1",
 		"eslint-plugin-react": "^7.16.0",
+		"formik": "^2.0.6",
 		"husky": "^3.0.9",
+		"jquery": "^3.4.1",
 		"lint-staged": "^9.4.3",
+		"node-sass": "^4.13.0",
 		"prettier": "^1.19.1",
 		"react": "^16.12.0",
-		"react-bootstrap": "^1.0.0-beta.14",
+		"react-bootstrap": "^1.0.0-beta.16",
+		"react-canvas-knob": "^0.5.0",
 		"react-dom": "^16.12.0",
-		"react-scripts": "3.2.0"
+		"react-modal": "^3.11.1",
+		"react-router-dom": "^5.1.2",
+		"react-scripts": "3.2.0",
+		"react-text-truncate": "^0.15.0",
+		"wow.js": "^1.2.2",
+		"yup": "^0.27.0"
 	},
 	"scripts": {
 		"start": "react-scripts start",
@@ -46,5 +61,6 @@
 			"prettier — single-quote — write",
 			"git add"
 		]
-	}
+	},
+	"devDependencies": {}
 }

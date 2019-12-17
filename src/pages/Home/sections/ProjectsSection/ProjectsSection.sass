@@ -1,0 +1,359 @@
+$path: '../../../../'
+
+@import ../../../../sass/variables.sass
+@import ../../../../sass/mixins.sass
+
+.projects-sect
+	background: url(#{$path}/img/projects_bg.jpg) no-repeat center center
+	background-size: cover
+	position: relative
+	z-index: 1
+	&:before
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background: #fff
+		opacity: .97
+		z-index: -1
+	.parallax_bg
+		background: url(#{$path}/img/projects_figures.png) no-repeat top center
+		background-size: 100% auto
+
+	.container
+		padding: 12.5em 0 9.375em /* 200/16 */ /* 150/16 */
+
+	.projects-list
+
+	.section_title
+		// margin-top: 150px
+
+	.projects_filter
+		width: 100%
+		ul
+			display: flex
+			justify-content: center
+			flex-wrap: wrap
+			padding: 0 15px
+			li
+				margin-right: 20px
+				margin-bottom: 5px
+				display: block
+				text-decoration: none
+				padding: 8px 30px 10px
+				font-family: $fut-m
+				font-size: 18px
+				border-radius: 30px
+				text-align: center
+				position: relative
+				outline: none
+				background-color: transparent
+				border: 2px solid $accent
+				color: #333
+				transition: all .3s ease
+				&:last-child
+					margin-right: 0
+				&:hover,
+				&.active
+					cursor: pointer
+					color: #fff
+					background: $accent
+					box-shadow: 0 4px 5px rgba(0, 0, 0, 0.12)
+					transform: translateY(-2px)
+
+				&:active
+					background: darken($accent, 5%)
+					border-color: darken($accent, 5%)
+					transform: translateY(0)
+
+	.projects_wrap
+		width: 93%
+		height: auto
+		margin-top: 3.75em /* 60/16 */
+		.project_item
+			position: relative
+			overflow: hidden
+			border-radius: 7px
+			border: 1px solid #e6e6e6
+			margin: 0 0.3125em	3.75em /* 5/16 */ /* 60/16 */
+			box-shadow: 0 10px 20px rgba(0,0,0,.12)
+			transition: all .3s ease
+			// animation: fade .5s ease
+
+			// @keyframes fade
+			// 	0%
+			// 		opacity: 1
+			// 	50%
+			// 		opacity: 0
+			// 	100%
+			// 		opacity: 1
+
+			&:hover
+				box-shadow: 0 15px 30px rgba(0,0,0,.2)
+				transform: translateY(-7px)
+			.img_wrap
+				width: 100%
+				min-height: 18.6vw
+				background: url(#{$path}/img/projects/project_preview_placeholder.png) no-repeat center center
+				background-size: cover
+				// transition: all .7s ease
+				+xl
+					min-height: 27.3vw
+				+lg
+					min-height: 219px
+				+md
+					min-height: 261px
+				@media only screen and (max-width: 424px)
+					min-height: 61.5vw
+				img
+					// opacity: 0
+					// opacity: 0.2
+					width: 100%
+					transition: all .7s ease
+			.project_info
+				position: absolute
+				top: 0
+				left: 0
+				width: 100%
+				height: 100%
+				padding: 20px
+				opacity: 0
+				transition: all .4s ease-in-out
+				z-index: 1
+				.info_content
+					width: 100%
+					height: 100%
+					border-radius: 4px
+					// border: 1px solid #F3F3F3
+					overflow: hidden
+					background: rgba(255,255,255,.95)
+					// box-shadow: 0 0 20px rgba(0,0,0,.07)
+					display: flex
+					flex-direction: column
+					justify-content: center
+					align-items: center
+					text-align: center
+					z-index: 1
+
+				.title
+					font-family: $fut-m
+					font-size: 1.5em
+					margin: 7px 15px 10px
+					transform: translateY(50px)
+					opacity: 0
+					transition: all .3s ease .1s
+					+xl
+						margin-left: 0
+				.desc
+					max-width: 300px
+					font-size: 16px
+					color: #777
+					margin-bottom: 15px
+					transform: translateY(50px)
+					opacity: 0
+					transition: all .3s ease .15s
+				.more_button
+					position: relative
+					width: 33px
+					height: 33px
+					background: none
+					border: 2px solid	$accent
+					border-radius: 50%
+					transition: width .2s ease, transform .3s ease .2s
+					transform: translateY(50px)
+					opacity: 0
+					&:focus
+						outline: none
+					&:hover
+						cursor: pointer
+					.plus_arrow
+						position: absolute
+						top: 14px
+						left: 7px
+						width: 16px
+						height: 16px
+						transition: all .2s ease
+						span
+							position: absolute
+							top: 0
+							left: 0
+							width: 16px
+							height: 2px
+							background: #777
+							&:before,
+							&:after
+								content: ''
+								position: absolute
+								top: 0
+								right: 0
+								width: 16px
+								height: 2px
+								background: #777
+								transform: rotate(90deg) translateY(0)
+								transition: all .2s ease
+
+	// .ajax_loader_wrap
+	// 	position: relative
+	// 	width: 100%
+	// 	height: 20px
+	// 	.ajax_loader
+	// 		position: absolute
+	// 		top: 50%
+	// 		left: 50%
+	// 		width: 50px
+	// 		height: 20px
+	// 		margin-left: -25px
+	// 		margin-top: -10px
+	// 		opacity: 0
+	// 		&.active
+	// 			opacity: 1
+	// 			.dot
+	// 				&:nth-child(1)
+	// 					animation: send_preloader_dots .7s .1s ease-in-out infinite
+	// 				&:nth-child(2)
+	// 					animation: send_preloader_dots .7s .2s ease-in-out infinite
+	// 				&:nth-child(3)
+	// 					animation: send_preloader_dots .7s .3s ease-in-out infinite
+	// 		.dot
+	// 			display: inline-block
+	// 			width: 10px
+	// 			height: 10px
+	// 			border-radius: 15px
+	// 			background-color: $accent
+	// 			margin: 0 2px
+
+	// 			@keyframes send_preloader_dots
+	// 				0
+	// 				transform: translate(0, 0)
+	// 				50%
+	// 					transform: translate(0, 7px)
+	// 				100%
+	// 					transform: translate(0, 0)
+
+	.more_projects
+		display: block
+		padding: 12px 60px 13px
+		margin-bottom: 30px
+
++xxl
+	.projects-sect
+		.projects_filter
+			ul
+				li
+					margin-right: 15px
+					padding: 6px 25px 8px
+					font-size: 16px
+		.projects_wrap
+			width: 91%
+			height: auto
+			.project_item
+				margin: 0 0 2.75em
+				.project_info
+					padding: 12px 15px
+					.title
+						font-size: 18px
+					.desc
+						font-size: 15px
+					.more_button
+						width: 30px
+						height: 30px
+						.plus_arrow
+							position: absolute
+							top: 12px
+							left: 5px
+
++xl
+	.projects-sect
+		.projects_wrap
+			width: 82%
+			height: auto
+			.project_item
+				margin: 0 0 2.75em
+				.project_info
+					position: relative
+					opacity: 1
+					padding: 10px 12px 13px
+					background: #fff
+					.info_content
+						background-color: transparent
+						box-shadow: none
+						border: none
+						align-items: flex-start
+					.title,
+					.desc
+						max-width: calc(100% - 60px)
+						transform: translateY(0)
+						opacity: 1
+						text-align: left
+					.title
+						font-size: 18px
+					.desc
+						margin-bottom: 0
+					.more_button
+						position: absolute
+						top: 50%
+						right: 17px
+						width: 35px
+						height: 35px
+						margin-top: -17.5px
+						transform: translateY(0)
+						opacity: 1
+						.plus_arrow
+							top: 15px
+							left: 8px
+
++md
+	.projects-sect
+		.container
+			padding: 0
+			overflow: hidden
+		.projects_filter
+			ul
+				padding: 0 20px
+				li
+					margin-right: 10px
+					padding: 5px 15px 6px
+					font-size: 15px
+		.projects_wrap
+			width: 80%
+			.project_item
+				max-width: 350px
+				margin: 0 auto 2.75em
+
++min_xl
+	.projects-sect
+		.projects_wrap
+			.project_item
+				&:hover
+					.project_info
+						opacity: 1
+						.info_content
+							.title,
+							.desc,
+							.more_button
+								transform: translateY(0)
+								opacity: 1
+				.project_info
+					.info_content
+					.more_button
+						&:hover
+							cursor: pointer
+							width: 50px
+							border-radius: 30px
+							.plus_arrow
+								left: 14px
+								span
+									&:before,
+									&:after
+										content: ''
+										position: absolute
+										top: 0
+										right: 0
+										width: 9px
+										height: 2px
+										background: #777
+										transform: rotate(35deg) translateY(-3px)
+									&:after
+										transform: rotate(145deg) translateY(-3px)

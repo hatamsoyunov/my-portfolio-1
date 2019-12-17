@@ -1,0 +1,77 @@
+.ReactModal
+	&__Overlay
+		transform: translateY(-100%)
+		transition: all .7s cubic-bezier(0.59, 0.02, 0.18, 1.01)
+		z-index: 103
+
+		&--after-open
+			transform: translateY(0)
+			.ReactModal__Content
+				opacity: 1
+				transition-delay: .65s
+
+		&--before-close
+			transform: translateY(-100%)
+
+
+	&__Content
+		opacity: 0
+		transition: all .4s ease
+
+	&__close-btn
+		position: absolute
+		top: 40px
+		right: 40px
+		width: 40px
+		height: 40px
+		padding: 0
+		background: none
+		border: none
+		opacity: 1
+		z-index: 2
+		&:hover
+			cursor: pointer
+		.button_box
+			width: 100%
+			height: 100%
+			.line
+				position: absolute
+				top: 12px
+				left: 0
+				width: 100%
+				height: 2px
+				background: #000
+				transform: translateY(7px) rotate(-45deg)
+				transition: all .3s cubic-bezier(0.68, -0.55, 0.27, 1.55)
+				z-index: -1
+			.line
+				&:before,
+				&:after
+					content: ''
+					position: absolute
+					top: 0
+					left: 0
+					width: 100%
+					height: 2px
+					background: #000
+					transition: all .3s cubic-bezier(0.68, -0.55, 0.27, 1.55)
+					z-index: -1
+			.line
+				&:before
+					top: 10px
+					width: 40%
+					transform: translateY(3px) translateX(12px) rotate(90deg)
+				&:after
+					top: 20px
+					width: 40%
+					transform: translateY(-33px) translateX(12px) rotate(90deg)
+
+		&:hover
+			.button_box
+				.line
+					&:before
+						transform: translateY(4px) translateX(12px) rotate(90deg)
+					&:after
+						transform: translateY(-34px) translateX(12px) rotate(90deg)
+		&:focus
+			outline: none

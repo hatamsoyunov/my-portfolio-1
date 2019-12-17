@@ -1,0 +1,109 @@
+$path: '../../';
+
+@import ../../sass/variables.sass
+@import ../../sass/mixins.sass
+
+
+// About more
+#about_more
+	.section_title
+		
+	.about_text
+		font-size: 20px
+		line-height: 1.5
+		color: #444
+		max-width: 1000px
+		width: 80%
+		&:hover
+			cursor: default
+		.title
+			position: relative
+			display: inline-block
+			font-family: $fut-m
+			font-size: 24px
+			color: #333
+			padding-bottom: 5px
+			margin: 20px 0 15px
+			&:before
+				content: ''
+				position: absolute
+				bottom: 0
+				left: 0
+				width: 40%
+				height: 2px
+				background: $accent
+				transition: all .5s ease
+			&:hover
+				cursor: default
+				&:before
+					width: 70%
+					background: $accent2
+		p
+			.slogan
+				display: block
+				font-size: 20px
+				color: #777
+			strong
+				color: #333
+		a
+			color: $accent
+			&:hover
+				color: $accent2
+
+		ul
+			padding-left: 15px
+			margin-bottom: 25px
+			li
+				position: relative
+				padding-left: 25px
+				line-height: 1.2
+				margin-bottom: 10px
+				&:before
+					content: ''
+					position: absolute
+					top: 7px
+					left: 0
+					width: 10px
+					height: 10px
+					background: url(#{$path}/img/icons/circle_accent.svg) no-repeat center center
+					transition: all .4s ease
+				&:hover
+					&:before
+						transform: translateX(3px)
+
+// Animation
+.mfp-ready 
+	#about_more
+		.section_title,
+		.about_text
+			transform: translateY(0)
+			opacity: 1
+		
+		.section_title
+			transition: all .4s ease .2s
+		.about_text
+			transition: all 1s ease .3s
+
+
+
++xxl
+	// About more popup
+	#about_more
+		.about_text
+			font-size: 20px
+
++lg
+	// About more
+	#about_more
+		.about_text
+			max-width: 750px
+			width: 80%
+			font-size: 18px
+			line-height: 1.4
+
++sm
+	// About more
+	#about_more
+		.about_text
+			width: 90%
+			padding: 0 15px

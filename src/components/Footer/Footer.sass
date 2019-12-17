@@ -1,0 +1,81 @@
+@import ../../sass/variables.sass
+@import ../../sass/mixins.sass
+
+// Fix Footer
+.footer
+	position: fixed
+	bottom: 74px
+	left: calc(80px + 32px)
+	width: calc(100% - 112px)
+	height: 0
+	display: flex
+	justify-content: flex-end
+	z-index: 10
+	transition: all .5s ease
+	.order_button
+		display: none
+	.socs_wrap
+		margin-right: 40px
+		min-height: 22px
+		ul
+			position: relative
+			display: flex
+			padding-right: 50px
+			&:before,
+			&:after
+				content: ''
+				position: absolute
+				top: 9px
+				right: 0
+				width: 25px
+				height: 3px
+				background: #999
+				transition: all .7s ease .5s
+			&:after
+				right: 25px
+				background: #333
+			li
+				margin-right: 15px
+				a
+					color: #333
+					&:hover
+						cursor: pointer
+						svg
+							transform: translateY(-2px)
+							color: $accent
+					svg
+						transition: all .3s ease
+						font-size: 22px
+						line-height: 1
+
++xxl
+	// Fix Footer
+	.footer
+		bottom: 60px
+		.socs_wrap
+			margin-right: 30px
+			ul
+				padding-right: 35px
+				&:before,
+				&:after
+					top: 8px
+					width: 15px
+				&:after
+					right: 15px
+				li
+					margin-right: 20px
+
++md
+	// Fix Footer
+	.footer
+		.socs_wrap
+			display: none
+		.order_button
+			display: block
+			width: 50px
+			height: 50px
+			padding: 8px 0 0
+			margin: -10px 20px 0
+			border-radius: 50%
+			svg
+				font-size: 20px

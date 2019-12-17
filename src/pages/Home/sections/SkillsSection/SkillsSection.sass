@@ -1,0 +1,111 @@
+$path: '../../../../';
+
+@import ../../../../sass/variables.sass
+@import ../../../../sass/mixins.sass
+
+.skills-sect
+	background: url(#{$path}/img/skills_bg.jpg) no-repeat center center
+	background-size: cover
+	position: relative
+	z-index: 1
+	&:before
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background: #fff
+		opacity: .95
+		z-index: -1
+	.parallax_bg
+		background: url(#{$path}/img/skills_figures.png) no-repeat center center
+		background-size: cover
+
+	.skills_wrap
+		max-width: 975px
+		display: flex
+		justify-content: center
+		flex-wrap: wrap
+		align-items: center
+		margin-top: 2.5em /* 40/16 */
+		.skill_item
+			margin-right: 5.4375em /* 87/16 */
+			margin-bottom: 40px
+			transition: all .3s ease
+			&:last-child,
+			&:nth-child(4),
+				margin-right: 0
+			&:hover
+				transform: translateY(-5px)
+			.skill_circle_wrap
+				input
+					font-family: $fut-m !important
+					font-size: 2.125em !important /* 34/16 */
+					color: #333 !important
+					cursor: default
+			.skill_title
+				font-family: $fut-m
+				font-size: 1.625em /* 26/16 */
+				text-align: center
+				margin-top: 10px
+
+
+
++xxl
+	.skills-sect
+		.skills_wrap
+			max-width: 630px
+
+
++lg
+	.skills-sect
+		.section_title
+			margin-bottom: 40px
+		.skills_wrap
+			max-width: 580px
+			.skill_item
+				margin-right: 4em
+				.skill_circle_wrap
+					input
+						font-family: $fut-m !important
+						font-size: 2.125em !important /* 34/16 */
+						color: #333 !important
+				.skill_title
+					font-family: $fut-m
+					font-size: 1.625em /* 26/16 */
+					text-align: center
+					margin-top: 20px
+
+
++md
+	.skills-sect
+		.skills_wrap
+			max-width: 490px
+			.skill_item
+				margin-right: 2em
+
+
++sm
+	.skills-sect
+		.skills_wrap
+			max-width: 420px
+			.skill_item
+				margin-right: 4em
+				&:nth-child(4)
+					margin-right: 4em
+				&:nth-child(3),
+				&:nth-child(6),
+				&:last-child
+					margin-right: 0
+
+
++xsm
+	.skills-sect
+		.skills_wrap
+			max-width: 290px
+			.skill_item
+				margin-right: 4em !important
+				&:nth-child(even),
+				&:last-child
+					margin-right: 0 !important

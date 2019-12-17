@@ -1,0 +1,211 @@
+@import ../../sass/variables.sass
+@import ../../sass/mixins.sass
+
+// Menu
+#menu
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	height: 100vh
+	display: flex
+	justify-content: space-between
+	flex-direction: column
+	padding: 50px 0
+	visibility: hidden
+	opacity: 0
+	transition: all .5s ease
+	z-index: 101
+	&:before
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		width: 0
+		height: 100%
+		background: #fff
+		z-index: -1
+		transition: all .5s ease
+	&.opened
+		visibility: visible
+		opacity: 1
+		&:before
+			width: 100%
+		.logo_wrap,
+		.socs_wrap
+			opacity: 1
+			transform: translateY(0)
+		nav
+			li
+				opacity: 1 !important
+				transform: translateY(0) !important
+				&:nth-child(1)
+					transition: all .5s ease .3s
+				&:nth-child(2)
+					transition: all .5s ease .4s
+				&:nth-child(3)
+					transition: all .5s ease .5s
+				&:nth-child(4)
+					transition: all .5s ease .6s
+				&:nth-child(5)
+					transition: all .5s ease .7s
+
+	.logo_wrap
+		width: 160px
+		transform: translateY(-30px)
+		opacity: 0
+		transition: all .5s ease .5s
+		img
+			width: 100%
+			height: auto
+
+	nav
+		li
+			margin-bottom: 5px
+			transform: translateX(30px)
+			opacity: 0
+			transition: all .3s ease
+			a
+				display: block
+				position: relative
+				font-family: $fut-m
+				font-size: 60px
+				color: #333
+				padding-bottom: 3px
+				&:hover,
+				&.active
+					color: $accent
+					&:before
+						width: 40%
+				&:before
+					content: ''
+					position: absolute
+					bottom: 0
+					left: 5px
+					width: 0
+					height: 3px
+					background: $accent
+					transition: all .3s ease
+
+	.socs_wrap
+		transform: translateY(30px)
+		opacity: 0
+		transition: all .5s ease .5s
+		ul
+			position: relative
+			display: flex
+			&:before,
+			&:after
+				content: ''
+				position: absolute
+				top: -35px
+				left: 50%
+				margin-left: -1.5px
+				width: 3px
+				height: 20px
+				background: #999
+			&:after
+				top: -55px
+				background: #333
+			li
+				margin-right: 20px
+				&:last-child
+					margin-right: 0
+				a
+					color: #333
+					&:hover
+						cursor: pointer
+						svg
+							transform: translateY(-2px)
+							color: $accent
+					svg
+						transition: all .3s ease
+						font-size: 28px
+						line-height: 1
+
+	.copyright
+		display: none
+
++xxl
+	// Menu
+	#menu
+		padding: 40px 0
+		.logo_wrap
+			width: 130px
+		nav
+			margin-bottom: 30px
+			li
+				margin-bottom: 5px
+				a
+					font-size: 3.75em /* 60/16 */
+					padding-bottom: 3px
+					&:before
+						height: 3px
+
+		.socs_wrap
+			ul
+				&:before,
+				&:after
+					top: -30px
+					height: 15px
+				&:after
+					top: -45px
+				li
+					margin-right: 20px
+					&:last-child
+						margin-right: 0
+					&:hover
+						cursor: pointer
+						svg
+							transform: translateY(-2px)
+							color: $accent
+					svg
+						font-size: 1.75em /* 28/16 */
+
++md
+	#menu
+		padding: 20px 0 35px
+		.row
+			&:nth-child(1)
+				justify-content: flex-start !important
+			&:last-child
+				flex-direction: column
+		.logo_wrap
+			width: 140px
+			margin-left: 30px
+			transform: translateY(0)
+
+		nav
+			li
+				margin-bottom: 10px
+				a
+					font-size: 35px
+		.socs_wrap
+			ul
+				li
+					margin-right: 15px
+					a
+						svg
+							font-size: 22px
+
+		.copyright
+			display: block
+			margin-top: 40px
+			&_text
+				position: relative
+				min-width: 290px
+				color: #777
+				font-size: 15px
+				padding-left: 60px
+				&:before,
+				&:after
+					content: ''
+					position: absolute
+					top: 7px
+					left: 0
+					width: 20px
+					height: 3px
+					background: #999
+				&:after
+					left: 20px
+					background: #333
